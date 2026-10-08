@@ -161,4 +161,9 @@ public class UtcLoginTest {
         WebElement copyright = driver.findElement(By.cssSelector("div.footer div.left span.a"));
         assertTrue(copyright.getText().contains("TrÆ°á»ng ÄH Giao ThÃ´ng Váº­n Táº£i"), "Footer pháº£i chá»©a tÃªn trÆ°á»ng");
     }
+    @Test
+    public void testTC24_CheckFooterHelpCenterLink() {
+        WebElement helpLink = driver.findElement(By.cssSelector("a[href*='hotrokythuat.utc.edu.vn']"));
+        assertTrue(helpLink.isDisplayed(), "LiÃªn káº¿t Trung tÃ¢m trá»£ giÃºp pháº£i hiá»ƒn thá»‹");
+    }
 }
