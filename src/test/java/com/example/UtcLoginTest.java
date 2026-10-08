@@ -88,4 +88,9 @@ public class UtcLoginTest {
         WebElement submitBtn = driver.findElement(By.className("submit_login"));
         assertTrue(submitBtn.isDisplayed(), "NÃºt ÄÄƒng nháº­p pháº£i hiá»ƒn thá»‹");
     }
+    @Test
+    public void testTC12_CheckLoginButtonText() {
+        WebElement submitBtn = driver.findElement(By.className("submit_login"));
+        assertEquals("ÄÄƒng nháº­p", submitBtn.getAttribute("value"), "GiÃ¡ trá»‹ cá»§a nÃºt Ä‘Äƒng nháº­p pháº£i lÃ  'ÄÄƒng nháº­p'");
+    }
 }
