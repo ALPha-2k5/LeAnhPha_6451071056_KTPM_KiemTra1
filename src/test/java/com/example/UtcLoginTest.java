@@ -66,4 +66,9 @@ public class UtcLoginTest {
         WebElement passwordInput = driver.findElement(By.name("userpwd"));
         assertEquals("password", passwordInput.getAttribute("type"), "Kiá»ƒu dá»¯ liá»‡u cá»§a Ã´ máº­t kháº©u pháº£i lÃ  'password'");
     }
+    @Test
+    public void testTC08_CheckPersistentCheckboxDisplayed() {
+        WebElement checkbox = driver.findElement(By.id("persistent"));
+        assertNotNull(checkbox, "Ã” checkbox 'Giá»¯ tÃ´i luÃ´n Ä‘Äƒng nháº­p' pháº£i tá»“n táº¡i");
+    }
 }
