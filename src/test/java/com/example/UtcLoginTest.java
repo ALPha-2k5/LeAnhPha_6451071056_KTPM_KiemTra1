@@ -134,4 +134,10 @@ public class UtcLoginTest {
 
         assertTrue(driver.getCurrentUrl().contains("/Login"), "ÄÄƒng nháº­p sai tÃ i khoáº£n pháº£i giá»¯ láº¡i á»Ÿ trang Login");
     }
+    @Test
+    public void testTC19_CheckInputUsernameText() {
+        WebElement usernameInput = driver.findElement(By.name("username"));
+        usernameInput.sendKeys("test_user");
+        assertEquals("test_user", usernameInput.getAttribute("value"), "GiÃ¡ trá»‹ Ã´ username pháº£i lÃ  'test_user'");
+    }
 }
