@@ -122,4 +122,16 @@ public class UtcLoginTest {
         submitBtn.click();
         assertTrue(driver.getCurrentUrl().contains("/Login"), "Khi báº¥m Ä‘Äƒng nháº­p trá»‘ng, trang pháº£i á»Ÿ láº¡i URL Login");
     }
+    @Test
+    public void testTC18_CheckLoginWithInvalidCredentials() {
+        WebElement usernameInput = driver.findElement(By.name("username"));
+        WebElement passwordInput = driver.findElement(By.name("userpwd"));
+        WebElement submitBtn = driver.findElement(By.className("submit_login"));
+
+        usernameInput.sendKeys("invalid_user_123");
+        passwordInput.sendKeys("wrong_password");
+        submitBtn.click();
+
+        assertTrue(driver.getCurrentUrl().contains("/Login"), "ÄÄƒng nháº­p sai tÃ i khoáº£n pháº£i giá»¯ láº¡i á»Ÿ trang Login");
+    }
 }
