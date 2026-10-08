@@ -76,4 +76,11 @@ public class UtcLoginTest {
         WebElement checkbox = driver.findElement(By.id("persistent"));
         assertFalse(checkbox.isSelected(), "Máº·c Ä‘á»‹nh Ã´ checkbox 'Giá»¯ tÃ´i luÃ´n Ä‘Äƒng nháº­p' chÆ°a Ä‘Æ°á»£c chá»n");
     }
+    @Test
+    public void testTC10_CheckTogglePersistentCheckbox() {
+        WebElement label = driver.findElement(By.cssSelector("label[for='persistent']"));
+        label.click();
+        WebElement checkbox = driver.findElement(By.id("persistent"));
+        assertTrue(checkbox.isSelected(), "Sau khi click, Ã´ checkbox 'Giá»¯ tÃ´i luÃ´n Ä‘Äƒng nháº­p' pháº£i Ä‘Æ°á»£c chá»n");
+    }
 }
