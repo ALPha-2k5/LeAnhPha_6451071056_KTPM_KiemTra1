@@ -99,4 +99,10 @@ public class UtcLoginTest {
         assertTrue(ssoBtn.isDisplayed(), "NÃºt ÄÄƒng nháº­p báº±ng e-mail UTC pháº£i hiá»ƒn thá»‹");
         assertTrue(ssoBtn.getText().contains("ÄÄƒng nháº­p báº±ng e-mail UTC"), "NÃºt SSO pháº£i chá»©a vÄƒn báº£n 'ÄÄƒng nháº­p báº±ng e-mail UTC'");
     }
+    @Test
+    public void testTC14_CheckGoogleEmailLoginHref() {
+        WebElement ssoBtn = driver.findElement(By.cssSelector("a.button"));
+        String href = ssoBtn.getAttribute("href");
+        assertTrue(href.contains("accounts.google.com"), "ÄÆ°á»ng dáº«n nÃºt Ä‘Äƒng nháº­p email UTC pháº£i trá» tá»›i Google OAuth");
+    }
 }
