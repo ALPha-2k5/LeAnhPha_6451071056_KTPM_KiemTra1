@@ -36,4 +36,9 @@ public class UtcLoginTest {
         String title = driver.getTitle();
         assertEquals("ÄÄƒng nháº­p", title, "TiÃªu Ä‘á» trang pháº£i lÃ  'ÄÄƒng nháº­p'");
     }
+    @Test
+    public void testTC02_CheckFormTitleText() {
+        WebElement form = driver.findElement(By.className("form"));
+        assertTrue(form.getText().contains("TÃ i khoáº£n vÄƒn phÃ²ng Ä‘iá»‡n tá»­"), "Form Ä‘Äƒng nháº­p pháº£i chá»©a chá»¯ 'TÃ i khoáº£n vÄƒn phÃ²ng Ä‘iá»‡n tá»­'");
+    }
 }
