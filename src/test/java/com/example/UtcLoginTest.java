@@ -156,4 +156,9 @@ public class UtcLoginTest {
         WebElement bannerSpan = driver.findElement(By.cssSelector("div.left div.caption span"));
         assertEquals("LÃ m viá»‡c má»i lÃºc má»i nÆ¡i", bannerSpan.getText(), "Phá»¥ Ä‘á» banner pháº£i Ä‘Ãºng");
     }
+    @Test
+    public void testTC23_CheckFooterCopyrightText() {
+        WebElement copyright = driver.findElement(By.cssSelector("div.footer div.left span.a"));
+        assertTrue(copyright.getText().contains("TrÆ°á»ng ÄH Giao ThÃ´ng Váº­n Táº£i"), "Footer pháº£i chá»©a tÃªn trÆ°á»ng");
+    }
 }
