@@ -46,4 +46,9 @@ public class UtcLoginTest {
         WebElement usernameInput = driver.findElement(By.name("username"));
         assertTrue(usernameInput.isDisplayed(), "Ã” nháº­p tÃªn Ä‘Äƒng nháº­p pháº£i hiá»ƒn thá»‹");
     }
+    @Test
+    public void testTC04_CheckUsernamePlaceholder() {
+        WebElement usernameInput = driver.findElement(By.name("username"));
+        assertEquals("TÃªn Ä‘Äƒng nháº­p", usernameInput.getAttribute("placeholder"), "Placeholder cá»§a Ã´ username pháº£i lÃ  'TÃªn Ä‘Äƒng nháº­p'");
+    }
 }
