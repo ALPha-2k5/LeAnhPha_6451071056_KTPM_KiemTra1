@@ -146,4 +146,9 @@ public class UtcLoginTest {
         passwordInput.sendKeys("secret123");
         assertEquals("secret123", passwordInput.getAttribute("value"), "GiÃ¡ trá»‹ Ã´ máº­t kháº©u pháº£i chá»©a Ä‘Ãºng text Ä‘Ã£ nháº­p");
     }
+    @Test
+    public void testTC21_CheckBannerTitle() {
+        WebElement bannerH1 = driver.findElement(By.cssSelector("div.left div.caption h1"));
+        assertEquals("KhÃ´ng chá»‰ lÃ  má»™t giáº£i phÃ¡p quáº£n lÃ½", bannerH1.getText(), "TiÃªu Ä‘á» banner pháº£i Ä‘Ãºng");
+    }
 }
