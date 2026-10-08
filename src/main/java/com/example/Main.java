@@ -9,7 +9,7 @@ public class Main {
         System.out.println("Khoi tao Selenium WebDriver...");
         
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless=new"); // Chay o che do an neu can
+        // options.addArguments("--headless=new"); // Bo dong nay de mo giao dien Chrome thuc te
         
         WebDriver driver = new ChromeDriver(options);
         try {

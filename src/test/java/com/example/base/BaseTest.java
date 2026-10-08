@@ -15,7 +15,7 @@ public class BaseTest {
     @BeforeEach
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless=new");
+        // options.addArguments("--headless=new"); // Bo dong nay de mo giao dien Chrome thuc te
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
