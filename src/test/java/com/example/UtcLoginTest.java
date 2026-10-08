@@ -140,4 +140,10 @@ public class UtcLoginTest {
         usernameInput.sendKeys("test_user");
         assertEquals("test_user", usernameInput.getAttribute("value"), "GiÃ¡ trá»‹ Ã´ username pháº£i lÃ  'test_user'");
     }
+    @Test
+    public void testTC20_CheckInputPasswordText() {
+        WebElement passwordInput = driver.findElement(By.name("userpwd"));
+        passwordInput.sendKeys("secret123");
+        assertEquals("secret123", passwordInput.getAttribute("value"), "GiÃ¡ trá»‹ Ã´ máº­t kháº©u pháº£i chá»©a Ä‘Ãºng text Ä‘Ã£ nháº­p");
+    }
 }
