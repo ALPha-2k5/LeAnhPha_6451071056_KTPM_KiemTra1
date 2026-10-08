@@ -116,4 +116,10 @@ public class UtcLoginTest {
         String href = forgotLink.getAttribute("href");
         assertTrue(href.contains("/Login/GetPass"), "LiÃªn káº¿t quÃªn máº­t kháº©u pháº£i trá» tá»›i '/Login/GetPass'");
     }
+    @Test
+    public void testTC17_CheckEmptyLoginSubmission() {
+        WebElement submitBtn = driver.findElement(By.className("submit_login"));
+        submitBtn.click();
+        assertTrue(driver.getCurrentUrl().contains("/Login"), "Khi báº¥m Ä‘Äƒng nháº­p trá»‘ng, trang pháº£i á»Ÿ láº¡i URL Login");
+    }
 }
