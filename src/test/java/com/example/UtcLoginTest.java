@@ -151,4 +151,9 @@ public class UtcLoginTest {
         WebElement bannerH1 = driver.findElement(By.cssSelector("div.left div.caption h1"));
         assertEquals("KhÃ´ng chá»‰ lÃ  má»™t giáº£i phÃ¡p quáº£n lÃ½", bannerH1.getText(), "TiÃªu Ä‘á» banner pháº£i Ä‘Ãºng");
     }
+    @Test
+    public void testTC22_CheckBannerSubtitle() {
+        WebElement bannerSpan = driver.findElement(By.cssSelector("div.left div.caption span"));
+        assertEquals("LÃ m viá»‡c má»i lÃºc má»i nÆ¡i", bannerSpan.getText(), "Phá»¥ Ä‘á» banner pháº£i Ä‘Ãºng");
+    }
 }
