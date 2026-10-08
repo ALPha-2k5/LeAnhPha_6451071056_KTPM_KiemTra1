@@ -1,4 +1,4 @@
-﻿package com.example;
+package com.example;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -31,97 +31,115 @@ public class UtcLoginTest {
             driver.quit();
         }
     }
+
     @Test
     public void testTC01_CheckPageTitle() {
         String title = driver.getTitle();
-        assertEquals("ÄÄƒng nháº­p", title, "TiÃªu Ä‘á» trang pháº£i lÃ  'ÄÄƒng nháº­p'");
+        assertEquals("Đăng nhập", title, "Tiêu đề trang phải là 'Đăng nhập'");
     }
+
     @Test
     public void testTC02_CheckFormTitleText() {
         WebElement form = driver.findElement(By.className("form"));
-        assertTrue(form.getText().contains("TÃ i khoáº£n vÄƒn phÃ²ng Ä‘iá»‡n tá»­"), "Form Ä‘Äƒng nháº­p pháº£i chá»©a chá»¯ 'TÃ i khoáº£n vÄƒn phÃ²ng Ä‘iá»‡n tá»­'");
+        assertTrue(form.getText().contains("Tài khoản văn phòng điện tử"), "Form đăng nhập phải chứa chữ 'Tài khoản văn phòng điện tử'");
     }
+
     @Test
     public void testTC03_CheckUsernameFieldDisplayed() {
         WebElement usernameInput = driver.findElement(By.name("username"));
-        assertTrue(usernameInput.isDisplayed(), "Ã” nháº­p tÃªn Ä‘Äƒng nháº­p pháº£i hiá»ƒn thá»‹");
+        assertTrue(usernameInput.isDisplayed(), "Ô nhập tên đăng nhập phải hiển thị");
     }
+
     @Test
     public void testTC04_CheckUsernamePlaceholder() {
         WebElement usernameInput = driver.findElement(By.name("username"));
-        assertEquals("TÃªn Ä‘Äƒng nháº­p", usernameInput.getAttribute("placeholder"), "Placeholder cá»§a Ã´ username pháº£i lÃ  'TÃªn Ä‘Äƒng nháº­p'");
+        assertEquals("Tên đăng nhập", usernameInput.getAttribute("placeholder"), "Placeholder của ô username phải là 'Tên đăng nhập'");
     }
+
     @Test
     public void testTC05_CheckPasswordFieldDisplayed() {
         WebElement passwordInput = driver.findElement(By.name("userpwd"));
-        assertTrue(passwordInput.isDisplayed(), "Ã” nháº­p máº­t kháº©u pháº£i hiá»ƒn thá»‹");
+        assertTrue(passwordInput.isDisplayed(), "Ô nhập mật khẩu phải hiển thị");
     }
+
     @Test
     public void testTC06_CheckPasswordPlaceholder() {
         WebElement passwordInput = driver.findElement(By.name("userpwd"));
-        assertEquals("Máº­t kháº©u", passwordInput.getAttribute("placeholder"), "Placeholder cá»§a Ã´ máº­t kháº©u pháº£i lÃ  'Máº­t kháº©u'");
+        assertEquals("Mật khẩu", passwordInput.getAttribute("placeholder"), "Placeholder của ô mật khẩu phải là 'Mật khẩu'");
     }
+
     @Test
     public void testTC07_CheckPasswordFieldMasked() {
         WebElement passwordInput = driver.findElement(By.name("userpwd"));
-        assertEquals("password", passwordInput.getAttribute("type"), "Kiá»ƒu dá»¯ liá»‡u cá»§a Ã´ máº­t kháº©u pháº£i lÃ  'password'");
+        assertEquals("password", passwordInput.getAttribute("type"), "Kiểu dữ liệu của ô mật khẩu phải là 'password'");
     }
+
     @Test
     public void testTC08_CheckPersistentCheckboxDisplayed() {
         WebElement checkbox = driver.findElement(By.id("persistent"));
-        assertNotNull(checkbox, "Ã” checkbox 'Giá»¯ tÃ´i luÃ´n Ä‘Äƒng nháº­p' pháº£i tá»“n táº¡i");
+        assertNotNull(checkbox, "Ô checkbox 'Giữ tôi luôn đăng nhập' phải tồn tại");
     }
+
     @Test
     public void testTC09_CheckPersistentCheckboxInitialState() {
         WebElement checkbox = driver.findElement(By.id("persistent"));
-        assertFalse(checkbox.isSelected(), "Máº·c Ä‘á»‹nh Ã´ checkbox 'Giá»¯ tÃ´i luÃ´n Ä‘Äƒng nháº­p' chÆ°a Ä‘Æ°á»£c chá»n");
+        assertFalse(checkbox.isSelected(), "Mặc định ô checkbox 'Giữ tôi luôn đăng nhập' chưa được chọn");
     }
+
     @Test
     public void testTC10_CheckTogglePersistentCheckbox() {
         WebElement label = driver.findElement(By.cssSelector("label[for='persistent']"));
         label.click();
         WebElement checkbox = driver.findElement(By.id("persistent"));
-        assertTrue(checkbox.isSelected(), "Sau khi click, Ã´ checkbox 'Giá»¯ tÃ´i luÃ´n Ä‘Äƒng nháº­p' pháº£i Ä‘Æ°á»£c chá»n");
+        assertTrue(checkbox.isSelected(), "Sau khi click, ô checkbox 'Giữ tôi luôn đăng nhập' phải được chọn");
     }
+
     @Test
     public void testTC11_CheckLoginButtonDisplayed() {
         WebElement submitBtn = driver.findElement(By.className("submit_login"));
-        assertTrue(submitBtn.isDisplayed(), "NÃºt ÄÄƒng nháº­p pháº£i hiá»ƒn thá»‹");
+        assertTrue(submitBtn.isDisplayed(), "Nút Đăng nhập phải hiển thị");
     }
+
     @Test
     public void testTC12_CheckLoginButtonText() {
         WebElement submitBtn = driver.findElement(By.className("submit_login"));
-        assertEquals("ÄÄƒng nháº­p", submitBtn.getAttribute("value"), "GiÃ¡ trá»‹ cá»§a nÃºt Ä‘Äƒng nháº­p pháº£i lÃ  'ÄÄƒng nháº­p'");
+        assertEquals("Đăng nhập", submitBtn.getAttribute("value"), "Giá trị của nút đăng nhập phải là 'Đăng nhập'");
     }
+
     @Test
     public void testTC13_CheckGoogleEmailLoginButtonDisplayed() {
         WebElement ssoBtn = driver.findElement(By.cssSelector("a.button"));
-        assertTrue(ssoBtn.isDisplayed(), "NÃºt ÄÄƒng nháº­p báº±ng e-mail UTC pháº£i hiá»ƒn thá»‹");
-        assertTrue(ssoBtn.getText().contains("ÄÄƒng nháº­p báº±ng e-mail UTC"), "NÃºt SSO pháº£i chá»©a vÄƒn báº£n 'ÄÄƒng nháº­p báº±ng e-mail UTC'");
+        assertTrue(ssoBtn.isDisplayed(), "Nút Đăng nhập bằng e-mail UTC phải hiển thị");
+        assertTrue(ssoBtn.getText().contains("Đăng nhập bằng e-mail UTC"), "Nút SSO phải chứa văn bản 'Đăng nhập bằng e-mail UTC'");
     }
+
     @Test
     public void testTC14_CheckGoogleEmailLoginHref() {
         WebElement ssoBtn = driver.findElement(By.cssSelector("a.button"));
         String href = ssoBtn.getAttribute("href");
-        assertTrue(href.contains("accounts.google.com"), "ÄÆ°á»ng dáº«n nÃºt Ä‘Äƒng nháº­p email UTC pháº£i trá» tá»›i Google OAuth");
+        assertTrue(href.contains("accounts.google.com"), "Đường dẫn nút đăng nhập email UTC phải trỏ tới Google OAuth");
     }
+
     @Test
     public void testTC15_CheckForgotPasswordLinkDisplayed() {
         WebElement forgotLink = driver.findElement(By.cssSelector("div.helps a"));
-        assertTrue(forgotLink.isDisplayed(), "LiÃªn káº¿t 'Báº¡n quÃªn máº­t kháº©u Ä‘Äƒng nháº­p ?' pháº£i hiá»ƒn thá»‹");
+        assertTrue(forgotLink.isDisplayed(), "Liên kết 'Bạn quên mật khẩu đăng nhập ?' phải hiển thị");
     }
+
     @Test
     public void testTC16_CheckForgotPasswordHref() {
         WebElement forgotLink = driver.findElement(By.cssSelector("div.helps a"));
         String href = forgotLink.getAttribute("href");
-        assertTrue(href.contains("/Login/GetPass"), "LiÃªn káº¿t quÃªn máº­t kháº©u pháº£i trá» tá»›i '/Login/GetPass'");
+        assertTrue(href.contains("/Login/GetPass"), "Liên kết quên mật khẩu phải trỏ tới '/Login/GetPass'");
     }
+
     @Test
     public void testTC17_CheckEmptyLoginSubmission() {
         WebElement submitBtn = driver.findElement(By.className("submit_login"));
         submitBtn.click();
-        assertTrue(driver.getCurrentUrl().contains("/Login"), "Khi báº¥m Ä‘Äƒng nháº­p trá»‘ng, trang pháº£i á»Ÿ láº¡i URL Login");
+        assertTrue(driver.getCurrentUrl().contains("/Login"), "Khi bấm đăng nhập trống, trang phải ở lại URL Login");
     }
+
     @Test
     public void testTC18_CheckLoginWithInvalidCredentials() {
         WebElement usernameInput = driver.findElement(By.name("username"));
@@ -132,38 +150,50 @@ public class UtcLoginTest {
         passwordInput.sendKeys("wrong_password");
         submitBtn.click();
 
-        assertTrue(driver.getCurrentUrl().contains("/Login"), "ÄÄƒng nháº­p sai tÃ i khoáº£n pháº£i giá»¯ láº¡i á»Ÿ trang Login");
+        assertTrue(driver.getCurrentUrl().contains("/Login"), "Đăng nhập sai tài khoản phải giữ lại ở trang Login");
     }
+
     @Test
     public void testTC19_CheckInputUsernameText() {
         WebElement usernameInput = driver.findElement(By.name("username"));
         usernameInput.sendKeys("test_user");
-        assertEquals("test_user", usernameInput.getAttribute("value"), "GiÃ¡ trá»‹ Ã´ username pháº£i lÃ  'test_user'");
+        assertEquals("test_user", usernameInput.getAttribute("value"), "Giá trị ô username phải là 'test_user'");
     }
+
     @Test
     public void testTC20_CheckInputPasswordText() {
         WebElement passwordInput = driver.findElement(By.name("userpwd"));
         passwordInput.sendKeys("secret123");
-        assertEquals("secret123", passwordInput.getAttribute("value"), "GiÃ¡ trá»‹ Ã´ máº­t kháº©u pháº£i chá»©a Ä‘Ãºng text Ä‘Ã£ nháº­p");
+        assertEquals("secret123", passwordInput.getAttribute("value"), "Giá trị ô mật khẩu phải chứa đúng text đã nhập");
     }
+
     @Test
     public void testTC21_CheckBannerTitle() {
         WebElement bannerH1 = driver.findElement(By.cssSelector("div.left div.caption h1"));
-        assertEquals("KhÃ´ng chá»‰ lÃ  má»™t giáº£i phÃ¡p quáº£n lÃ½", bannerH1.getText(), "TiÃªu Ä‘á» banner pháº£i Ä‘Ãºng");
+        assertEquals("Không chỉ là một giải pháp quản lý", bannerH1.getText(), "Tiêu đề banner phải đúng");
     }
+
     @Test
     public void testTC22_CheckBannerSubtitle() {
         WebElement bannerSpan = driver.findElement(By.cssSelector("div.left div.caption span"));
-        assertEquals("LÃ m viá»‡c má»i lÃºc má»i nÆ¡i", bannerSpan.getText(), "Phá»¥ Ä‘á» banner pháº£i Ä‘Ãºng");
+        assertEquals("Làm việc mọi lúc mọi nơi", bannerSpan.getText(), "Phụ đề banner phải đúng");
     }
+
     @Test
     public void testTC23_CheckFooterCopyrightText() {
         WebElement copyright = driver.findElement(By.cssSelector("div.footer div.left span.a"));
-        assertTrue(copyright.getText().contains("TrÆ°á»ng ÄH Giao ThÃ´ng Váº­n Táº£i"), "Footer pháº£i chá»©a tÃªn trÆ°á»ng");
+        assertTrue(copyright.getText().contains("Trường ĐH Giao Thông Vận Tải"), "Footer phải chứa tên trường");
     }
+
     @Test
     public void testTC24_CheckFooterHelpCenterLink() {
         WebElement helpLink = driver.findElement(By.cssSelector("a[href*='hotrokythuat.utc.edu.vn']"));
-        assertTrue(helpLink.isDisplayed(), "LiÃªn káº¿t Trung tÃ¢m trá»£ giÃºp pháº£i hiá»ƒn thá»‹");
+        assertTrue(helpLink.isDisplayed(), "Liên kết Trung tâm trợ giúp phải hiển thị");
+    }
+
+    @Test
+    public void testTC25_CheckFooterFeedbackEmailLink() {
+        WebElement feedbackLink = driver.findElement(By.cssSelector("a[href^='mailto:hotrokythuat@utc.edu.vn']"));
+        assertTrue(feedbackLink.isDisplayed(), "Liên kết Ý kiến phản hồi phải hiển thị");
     }
 }
