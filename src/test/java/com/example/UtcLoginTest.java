@@ -110,4 +110,10 @@ public class UtcLoginTest {
         WebElement forgotLink = driver.findElement(By.cssSelector("div.helps a"));
         assertTrue(forgotLink.isDisplayed(), "LiÃªn káº¿t 'Báº¡n quÃªn máº­t kháº©u Ä‘Äƒng nháº­p ?' pháº£i hiá»ƒn thá»‹");
     }
+    @Test
+    public void testTC16_CheckForgotPasswordHref() {
+        WebElement forgotLink = driver.findElement(By.cssSelector("div.helps a"));
+        String href = forgotLink.getAttribute("href");
+        assertTrue(href.contains("/Login/GetPass"), "LiÃªn káº¿t quÃªn máº­t kháº©u pháº£i trá» tá»›i '/Login/GetPass'");
+    }
 }
