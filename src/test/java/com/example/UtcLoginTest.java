@@ -41,4 +41,9 @@ public class UtcLoginTest {
         WebElement form = driver.findElement(By.className("form"));
         assertTrue(form.getText().contains("TÃ i khoáº£n vÄƒn phÃ²ng Ä‘iá»‡n tá»­"), "Form Ä‘Äƒng nháº­p pháº£i chá»©a chá»¯ 'TÃ i khoáº£n vÄƒn phÃ²ng Ä‘iá»‡n tá»­'");
     }
+    @Test
+    public void testTC03_CheckUsernameFieldDisplayed() {
+        WebElement usernameInput = driver.findElement(By.name("username"));
+        assertTrue(usernameInput.isDisplayed(), "Ã” nháº­p tÃªn Ä‘Äƒng nháº­p pháº£i hiá»ƒn thá»‹");
+    }
 }
