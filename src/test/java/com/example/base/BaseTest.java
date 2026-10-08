@@ -1,30 +1,25 @@
-package com.example;
+package com.example.base;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import java.time.Duration;
 
-public class LoginTest {
-
-    private WebDriver driver;
+public class BaseTest {
+    protected WebDriver driver;
+    protected final String BASE_URL = "https://vanphongdientu.utc.edu.vn/Login?r=https%3A%2F%2Fvanphongdientu.utc.edu.vn%2F";
 
     @BeforeEach
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless=new");
+        options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
-    }
-
-    @Test
-    public void testOpenPage() {
-        driver.get("https://example.com");
-        String title = driver.getTitle();
-        assertTrue(title.contains("Example Domain"), "Tieu de trang phai chua 'Example Domain'");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.get(BASE_URL);
     }
 
     @AfterEach
