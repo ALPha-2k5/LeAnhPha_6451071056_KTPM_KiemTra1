@@ -52,7 +52,7 @@ public class LoginPage extends BasePage {
     }
 
     public boolean isPersistentCheckboxDisplayed() {
-        return isDisplayed(persistentCheckbox);
+        return isDisplayed(persistentLabel) || !driver.findElements(persistentCheckbox).isEmpty();
     }
 
     public boolean isPersistentCheckboxSelected() {
