@@ -71,4 +71,9 @@ public class UtcLoginTest {
         WebElement checkbox = driver.findElement(By.id("persistent"));
         assertNotNull(checkbox, "Ã” checkbox 'Giá»¯ tÃ´i luÃ´n Ä‘Äƒng nháº­p' pháº£i tá»“n táº¡i");
     }
+    @Test
+    public void testTC09_CheckPersistentCheckboxInitialState() {
+        WebElement checkbox = driver.findElement(By.id("persistent"));
+        assertFalse(checkbox.isSelected(), "Máº·c Ä‘á»‹nh Ã´ checkbox 'Giá»¯ tÃ´i luÃ´n Ä‘Äƒng nháº­p' chÆ°a Ä‘Æ°á»£c chá»n");
+    }
 }
