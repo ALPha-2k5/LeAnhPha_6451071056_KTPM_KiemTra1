@@ -56,4 +56,9 @@ public class UtcLoginTest {
         WebElement passwordInput = driver.findElement(By.name("userpwd"));
         assertTrue(passwordInput.isDisplayed(), "Ã” nháº­p máº­t kháº©u pháº£i hiá»ƒn thá»‹");
     }
+    @Test
+    public void testTC06_CheckPasswordPlaceholder() {
+        WebElement passwordInput = driver.findElement(By.name("userpwd"));
+        assertEquals("Máº­t kháº©u", passwordInput.getAttribute("placeholder"), "Placeholder cá»§a Ã´ máº­t kháº©u pháº£i lÃ  'Máº­t kháº©u'");
+    }
 }
