@@ -61,4 +61,9 @@ public class UtcLoginTest {
         WebElement passwordInput = driver.findElement(By.name("userpwd"));
         assertEquals("Máº­t kháº©u", passwordInput.getAttribute("placeholder"), "Placeholder cá»§a Ã´ máº­t kháº©u pháº£i lÃ  'Máº­t kháº©u'");
     }
+    @Test
+    public void testTC07_CheckPasswordFieldMasked() {
+        WebElement passwordInput = driver.findElement(By.name("userpwd"));
+        assertEquals("password", passwordInput.getAttribute("type"), "Kiá»ƒu dá»¯ liá»‡u cá»§a Ã´ máº­t kháº©u pháº£i lÃ  'password'");
+    }
 }
