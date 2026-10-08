@@ -105,4 +105,9 @@ public class UtcLoginTest {
         String href = ssoBtn.getAttribute("href");
         assertTrue(href.contains("accounts.google.com"), "ÄÆ°á»ng dáº«n nÃºt Ä‘Äƒng nháº­p email UTC pháº£i trá» tá»›i Google OAuth");
     }
+    @Test
+    public void testTC15_CheckForgotPasswordLinkDisplayed() {
+        WebElement forgotLink = driver.findElement(By.cssSelector("div.helps a"));
+        assertTrue(forgotLink.isDisplayed(), "LiÃªn káº¿t 'Báº¡n quÃªn máº­t kháº©u Ä‘Äƒng nháº­p ?' pháº£i hiá»ƒn thá»‹");
+    }
 }
