@@ -83,4 +83,9 @@ public class UtcLoginTest {
         WebElement checkbox = driver.findElement(By.id("persistent"));
         assertTrue(checkbox.isSelected(), "Sau khi click, Ã´ checkbox 'Giá»¯ tÃ´i luÃ´n Ä‘Äƒng nháº­p' pháº£i Ä‘Æ°á»£c chá»n");
     }
+    @Test
+    public void testTC11_CheckLoginButtonDisplayed() {
+        WebElement submitBtn = driver.findElement(By.className("submit_login"));
+        assertTrue(submitBtn.isDisplayed(), "NÃºt ÄÄƒng nháº­p pháº£i hiá»ƒn thá»‹");
+    }
 }
