@@ -93,4 +93,10 @@ public class UtcLoginTest {
         WebElement submitBtn = driver.findElement(By.className("submit_login"));
         assertEquals("ÄÄƒng nháº­p", submitBtn.getAttribute("value"), "GiÃ¡ trá»‹ cá»§a nÃºt Ä‘Äƒng nháº­p pháº£i lÃ  'ÄÄƒng nháº­p'");
     }
+    @Test
+    public void testTC13_CheckGoogleEmailLoginButtonDisplayed() {
+        WebElement ssoBtn = driver.findElement(By.cssSelector("a.button"));
+        assertTrue(ssoBtn.isDisplayed(), "NÃºt ÄÄƒng nháº­p báº±ng e-mail UTC pháº£i hiá»ƒn thá»‹");
+        assertTrue(ssoBtn.getText().contains("ÄÄƒng nháº­p báº±ng e-mail UTC"), "NÃºt SSO pháº£i chá»©a vÄƒn báº£n 'ÄÄƒng nháº­p báº±ng e-mail UTC'");
+    }
 }
